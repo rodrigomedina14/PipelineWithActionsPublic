@@ -32,6 +32,11 @@ jobs:
         run: pip install pyspark
       - name: Run ReadData
         run: jupyter nbconvert --to notebook --execute ReadData.ipynb
+      - name: Upload output parquet
+        uses: actions/upload-artifact@v4
+        with:
+            name: output-parquet
+            path: output.parquet/
       - name: Debug - mostra file creati
         run: |
           echo "=== Current directory ==="
