@@ -28,6 +28,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install Jupyter
         run: pip install jupyter nbconvert
+      - name: Install Pyspark
+        run: pip install pyspark
       - name: Run ReadData
         run: jupyter nbconvert --to notebook --execute ReadData.ipynb
 
