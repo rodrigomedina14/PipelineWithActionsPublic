@@ -30,6 +30,14 @@ jobs:
         run: pip install jupyter nbconvert
       - name: Install Pyspark
         run: pip install pyspark
+      - name: Debug - mostra file creati
+        run: |
+          echo "=== Current directory ==="
+          pwd
+          echo "=== Tutti i file .parquet trovati ==="
+          find . -name "*.parquet" 2>/dev/null
+          echo "=== Struttura cartelle ==="
+          ls -la
       - name: Run ReadData
         run: jupyter nbconvert --to notebook --execute ReadData.ipynb
 
